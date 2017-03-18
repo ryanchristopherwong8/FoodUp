@@ -6,7 +6,7 @@
   "author": "Ryan Wong <ryancwong8@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node webpack/webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^15.4.2",

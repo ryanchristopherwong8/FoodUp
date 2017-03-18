@@ -1,22 +1,37 @@
+/*
+    ./webpack.config.js
+*/
+const path = require('path');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './src/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
+
+
 module.exports = {
-  context: __dirname + "/app",
-
-  entry: "./js/app.js",
-
+  entry: './src/index.js',
   output: {
-    filename: "app.js",
-    path: __dirname + "/dist",
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json']
+    path: path.resolve('dist'),
+    filename: 'index_bundle.js'
   },
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loaders: ["babel-loader"]
-      }
+      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
-  }
-};
+  },
+  plugins: [
+      /**
+      * HtmlWebpackPlugin will make sure out JavaScript files are being called
+      * from within our index.html
+      */
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: 'index.html',
+        inject: 'body',
+      }),
+    ],
+}
