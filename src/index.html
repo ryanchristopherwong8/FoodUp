@@ -1,8 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <title>FOOD UP</title>
+  <title>Citrus</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+  <style>
+  	  p,li,span, div {
+  	  	font-size: 1.1em;
+  	  }
+  	  .header_text {
+  	  	
+    	text-align: center;
+    	padding:30px;
+    	margin-bottom:20px;
+    	background-color:orange;
+  	  }
+
+  	  .header_content {
+  	  	font-size: 6em;
+    	font-family: inherit;
+    	font-weight: lighter;
+    	color: #FFFFFF;
+  	  }
+
+  	  .header_subcontent {
+  	  	color: #FFFFFF;
+  	  }
+
+	  .loader {
+	  visibility:hidden;
+	  margin:0 auto;
+	  margin-top:20px;
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid orange;
+	  border-bottom: 16px solid orange;
+	  width: 120px;
+	  height: 120px;
+	  -webkit-animation: spin 2s linear infinite;
+	  animation: spin 2s linear infinite;
+	}
+
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	#DisplayResponse {
+		margin: 20px 30px 20px 30px;
+	}
+  </style>
   </head>
   <body>
     <!-- Moaunting div of our React app -->
