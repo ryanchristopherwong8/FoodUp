@@ -6,7 +6,8 @@
   "author": "Ryan Wong <ryancwong8@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "tester": "node webpack/webpack-dev-server"
   },
   "dependencies": {
     "jquery": "^3.2.0",
