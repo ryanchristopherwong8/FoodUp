@@ -6,6 +6,11 @@ export default class DisplayResponse extends React.Component {
     return (
         <div className={'container-fluid'}>
           {this.props.recipes && this.props.recipes.map(function(object) {
+          var ingredients = [];
+        for (var i = 0; i < object.ingredients.length; i++) {
+          ingredients.push(object.ingredients[i] && <li>{object.ingredients[i]}</li>)
+        }
+
             return (
               <div className={'container-fluid', 'recipe_block'}>
                 <h2>{object.id}</h2>
@@ -15,7 +20,7 @@ export default class DisplayResponse extends React.Component {
                 <div className={'col-md-6'}><h3>Time:</h3>{object.time}</div>
                 <h3>Ingredients</h3>
                 <ul style={{listStyle: 'none'}} className = {'list-group'}>
-                    {object.ingredients}
+                    {ingredients}
                 </ul>
                 <a href={object.link} className={'btn btn-default btn-lg active'} role="button">Click here to get recipe instructions</a>
               </div>
