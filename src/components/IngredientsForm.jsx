@@ -10,7 +10,7 @@ export default class IngredientsForm extends React.Component {
             <form id="ingredients_form">
               <label>
                 Name:
-                <input type="text" name="Ingredient" />
+                <input id="ingredients" type="text" name="Ingredient" />
               </label>
               <input type="submit" value="Submit" />
             </form>
@@ -23,9 +23,13 @@ export default class IngredientsForm extends React.Component {
     // render the buy button with jQuery
     $('#ingredients_form').submit(function(ev) {
       ev.preventDefault(); // to stop the form from submitting
+      var ingredients = $('#ingredients').val().split(',');
+      var jsonData = {};
+      jsonData["ingredients"]= ingredients;
+
       /* Validations go here */
       request.post('https://foodup-backend.herokuapp.com/recipes/search')
-        .send({"ingredients": ["chicken", "spinach"]})
+        .send(jsonData)
         .set('Accept', 'application/json')
         .type('application/json')
         .end((err, res) => {
