@@ -1,6 +1,7 @@
 import React from 'react';
 import request from 'superagent';
 import DisplayResponse from './DisplayResponse.jsx';
+import DisplayEmptyResponse from './DisplayEmptyResponse.jsx';
 import ReactDOM from 'react-dom';
 
 export default class IngredientsForm extends React.Component {
@@ -43,6 +44,10 @@ export default class IngredientsForm extends React.Component {
         .set('Accept', 'application/json')
         .type('application/json')
         .end((err, res) => {
+          console.log(res);
+          if (res.text === "[]") {
+            //ReactDOM.render(<DisplayEmptyResponse />, document.getElementById('DisplayResponse'));
+          }
           if (res && res.status === 200) {
             var recipes = [];
             for (var i = 0; i < res.body.length; i++) {

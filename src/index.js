@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 import IngredientsForm from './components/IngredientsForm.jsx';
 import DisplayResponse from './components/DisplayResponse.jsx';
+//import DisplayEmptyResponse from './components/DisplayEmptyResponse.jsx';
 import request from 'superagent';
 
 // this renders it to div element root
