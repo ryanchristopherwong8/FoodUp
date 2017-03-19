@@ -9,9 +9,11 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "jquery": "^3.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "v3.0.0"
+    "react-router": "v3.0.0",
+    "superagent": "^3.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",

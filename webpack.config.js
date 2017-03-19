@@ -2,7 +2,7 @@
     ./webpack.config.js
 */
 const path = require('path');
-
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -18,6 +18,10 @@ module.exports = {
     ]
   },
   plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery"
+      }),
       /**
       * HtmlWebpackPlugin will make sure out JavaScript files are being called
       * from within our index.html
