@@ -38,28 +38,19 @@ export default class IngredientsForm extends React.Component {
       jsonData["ingredients"]= ingredients;
 
       /* Validations go here */
-      request.post('https://foodup-backend.herokuapp.com/recipes/search')
+      request.post('https://foodup-backend.herokuapp.com/recipes/search') 
         .send(jsonData)
         .set('Accept', 'application/json')
         .type('application/json')
         .end((err, res) => {
           if (res && res.status === 200) {
-            var recipes = [];
-            for (var i = 0; i < res.body.length; i++) {
-              recipes.push(<DisplayResponse
-                name={res.body[i].name}
-                image={res.body[i].image}
-                link={res.body[i].link}
-                time={res.body[i].time}
-                ingredients={res.body[i].ingredients}/>)
-            }
+            console.log(res.body);
             $('.loader').css('visibility', 'hidden');
             $('.loader').css('display', 'none');
-            ReactDOM.render(<div>{recipes}</div>, document.getElementById('DisplayResponse'));
+            ReactDOM.render(<DisplayResponse recipes={res.body}/>, document.getElementById('DisplayResponse'));
           }
         });
     });
   }
 }
 
-// link time serves name ingredients
