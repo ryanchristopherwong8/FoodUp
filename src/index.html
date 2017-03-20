@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citrus</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
   <style>
@@ -9,6 +10,8 @@
   	  }
   	  .recipe_block {
   	  	margin:0 10% 0 10%;
+        padding-bottom: 30px;
+        border-bottom: 4px double whitesmoke;
   	  }
 
   	  .header_text {
@@ -32,6 +35,24 @@
   	  .recipe_heading {
   	  	padding:10px;
   	  }
+
+      img.recipe_img {
+        border-radius: 5px;
+        box-shadow: 2px 2px 7px #aaaaaa;
+      }
+      ul.ingredients_list {
+        list-style: none;
+        border-left: 5px solid rgba(255, 165, 0, 0.25);
+        padding-left: 11px;
+        margin-left: 1px;
+      }
+      .ingredients_list > li {
+        border-bottom: 1px dashed #cccccc;
+        padding: 3px 0px 3px 0px;
+      }
+      .recipe-btn {
+        width: 100%;
+      }
 
 	  .loader {
 	  visibility:hidden;
